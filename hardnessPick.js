@@ -25,17 +25,36 @@ function hardnessPick() {
         first.classList.add('colorChanger');
         second.classList.remove('colorChanger');
         third.classList.remove('colorChanger');
-    })
+        pick.style.color = '#004980';
+        pick.style.fontSize = 40 + 'px';
+        hardness = 1;
+    });
     second.addEventListener('click', () => {
         first.classList.remove('colorChanger');
         second.classList.add('colorChanger');
         third.classList.remove('colorChanger');
-    })
+        pick.style.color = '#004980';
+        pick.style.fontSize = 40 + 'px';
+        hardness = 2;
+    });
     third.addEventListener('click', () => {
         first.classList.remove('colorChanger');
         second.classList.remove('colorChanger');
         third.classList.add('colorChanger');
-    })
+        pick.style.color = '#004980';
+        pick.style.fontSize = 40 + 'px';
+        hardness = 3;
+    });
+    startButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (hardness !== 0) {
+            return gameStart();
+        }
+        else {
+            pick.style.color = 'red';
+            pick.style.fontSize = 45 + 'px';
+        };
+    });
 
     main.appendChild(pick);
     main.appendChild(numbers);
