@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CardGame</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div class="main"></div>
-    <script src="./hardnessPick.js"></script>
-    <script src="./gameStart.js"></script>
-    <script>
-        let hardness = 0
-        let changer = 40
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CardGame</title>
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <div class="main"></div>
+        <script src="./src/hardnessPick.js"></script>
+        <script src="./src/gameStart.js"></script>
+        <script>
+            let hardness = 0
+            let changer = 40
 
-        const body = document.querySelector('body');
-        const main = document.querySelector('.main');
+            const body = document.querySelector('body')
+            const main = document.querySelector('.main')
 
-        function remove(block) {
-            while (block.firstChild) {
-                block.removeChild(block.firstChild);
-            }            
-        }
-        hardnessPick();
-    </script>
-</body>
+            function remove(block) {
+                while (block.firstChild) {
+                    block.removeChild(block.firstChild)
+                }
+            }
+            hardnessPick()
+        </script>
+    </body>
 </html>

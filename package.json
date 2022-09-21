@@ -1,0 +1,34 @@
+{
+    "name": "cardgame",
+    "version": "1.0.0",
+    "description": "123\r 123",
+    "main": "gameStart.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write .",
+        "lint:js": "eslint ./src/**/*.js",
+        "lint:css": "stylelint './src/**/*.css'",
+        "prepare": "husky install",
+        "lint": "npm run lint:js && npm run lint:css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/VolkOligarx/CardGame.git"
+    },
+    "author": "VolkOligarx barnabeo12@yandex.ru",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/VolkOligarx/CardGame/issues"
+    },
+    "homepage": "https://github.com/VolkOligarx/CardGame#readme",
+    "devDependencies": {
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "husky": "^8.0.1",
+        "prettier": "^2.7.1",
+        "stylelint": "^14.12.0",
+        "stylelint-config-prettier": "^9.0.3",
+        "stylelint-config-standard": "^28.0.0",
+        "stylelint-prettier": "^2.0.0"
+    }
+}

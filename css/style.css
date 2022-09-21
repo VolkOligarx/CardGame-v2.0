@@ -1,0 +1,97 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
+    background: #00537c;
+}
+
+.picker {
+    transition: all 1s;
+    background: white;
+    color: #0080c1;
+}
+
+.picker:hover {
+    transform: scale(1.05);
+}
+
+.colorChanger {
+    background: rgb(117 117 117);
+    color: #dad8d8;
+}
+
+.startButton {
+    width: 25vw;
+    height: 5vh;
+    background: #7ac100;
+    border-radius: 12px;
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #fff;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s;
+}
+
+.startButton:hover {
+    transform: scale(1.05);
+}
+
+.first,
+.second,
+.third {
+    width: 10vw;
+    height: 10vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    border-radius: 12px;
+}
+
+.mainHardnessPick {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background: #c2f5ff;
+    width: 50vw;
+    height: 50vh;
+    gap: 5vh;
+}
+
+.numbers {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.pick {
+    width: 20vw;
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    color: #004980;
+    margin: 0.01px;
+}
