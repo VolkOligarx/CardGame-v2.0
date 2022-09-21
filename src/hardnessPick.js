@@ -23,27 +23,24 @@ function hardnessPick() {
 
     first.addEventListener('click', () => {
         first.classList.add('colorChanger')
-        second.classList.remove('colorChanger')
-        third.classList.remove('colorChanger')
-        pick.style.color = '#004980'
-        pick.style.fontSize = 40 + 'px'
-        hardness = 1
+        second.classList.remove('colorChanger', 'pickAfterPick')
+        third.classList.remove('colorChanger', 'pickAfterPick')
+        first.classList.add('pickAfterPick')
+        window.gameStart.hardness = 1
     })
     second.addEventListener('click', () => {
-        first.classList.remove('colorChanger')
-        second.classList.add('colorChanger')
-        third.classList.remove('colorChanger')
-        pick.style.color = '#004980'
-        pick.style.fontSize = 40 + 'px'
-        hardness = 2
+        first.classList.remove('colorChanger', 'pickAfterPick')
+        second.classList.add('colorChanger', 'pickAfterPick')
+        third.classList.remove('colorChanger', 'pickAfterPick')
+        second.classList.add('pickAfterPick')
+        window.gameStart.hardness = 2
     })
     third.addEventListener('click', () => {
-        first.classList.remove('colorChanger')
-        second.classList.remove('colorChanger')
-        third.classList.add('colorChanger')
-        pick.style.color = '#004980'
-        pick.style.fontSize = 40 + 'px'
-        hardness = 3
+        first.classList.remove('colorChanger', 'pickAfterPick');
+        second.classList.remove('colorChanger', 'pickAfterPick');
+        third.classList.add('colorChanger');
+        third.classList.add('pickAfterPick');
+        window.gameStart.hardness = 3
     })
     startButton.addEventListener('click', (event) => {
         event.preventDefault()
