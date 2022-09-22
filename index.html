@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>CardGame</title>
         <link rel="stylesheet" href="./css/hardnessPick.css" />
+        <link rel="stylesheet" href="./css/gameStart.css">
     </head>
     <body>
         <div class="main"></div>
@@ -25,7 +26,9 @@
             window.gameState = {
                 hardness: 0
             }
+            window.onload = () => {
             hardnessPick()
+            }
         </script>
     </body>
 </html>

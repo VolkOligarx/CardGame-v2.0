@@ -26,25 +26,25 @@ function hardnessPick() {
         second.classList.remove('colorChanger', 'pickAfterPick')
         third.classList.remove('colorChanger', 'pickAfterPick')
         first.classList.add('pickAfterPick')
-        window.gameStart.hardness = 1
+        window.gameState.hardness = 1
     })
     second.addEventListener('click', () => {
         first.classList.remove('colorChanger', 'pickAfterPick')
         second.classList.add('colorChanger', 'pickAfterPick')
         third.classList.remove('colorChanger', 'pickAfterPick')
         second.classList.add('pickAfterPick')
-        window.gameStart.hardness = 2
+        window.gameState.hardness = 2
     })
     third.addEventListener('click', () => {
         first.classList.remove('colorChanger', 'pickAfterPick');
         second.classList.remove('colorChanger', 'pickAfterPick');
         third.classList.add('colorChanger');
         third.classList.add('pickAfterPick');
-        window.gameStart.hardness = 3
+        window.gameState.hardness = 3
     })
     startButton.addEventListener('click', (event) => {
         event.preventDefault()
-        if (hardness !== 0) {
+        if (window.gameState.hardness !== 0) {
             return gameStart()
         } else {
             pick.style.color = 'red'

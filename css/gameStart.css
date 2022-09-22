@@ -1,0 +1,84 @@
+.timer {
+    background: #00537c;
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #fff;
+    border: none;
+}
+.upperBarText {
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #fff;
+}
+
+.timerBar {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 10px;
+}
+
+.upperBar {
+    height: 20vh;
+    width: 96vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mainBar {
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    /* align-content: center; */
+    justify-items: center;
+}
+@media (max-width: 1800px) {
+    .mainBar {
+        align-content: center;
+    }
+}
+
+.minSecBar {
+    display: flex;
+    gap: 57px;
+    padding-left: 40px;
+    height: 40px;
+}
+
+.mainGameStart {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.restartButton {
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #fff;
+    background: #7AC100;
+    border-radius: 12px;
+    margin-right: 26px
+}
+
+.cardBack {
+    margin: 7.5px;
+    max-height: 225px;
+    width: 9vw;
+}
