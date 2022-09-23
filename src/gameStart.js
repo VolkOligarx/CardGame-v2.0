@@ -7,7 +7,7 @@ function gameStart() {
     const sec = document.createElement('p')
     const minSecBar = document.createElement('div')
     const timerBar = document.createElement('div')
-    const mainBar = document.createElement('div')
+    mainBar = document.createElement('div')
     const restartButton = document.createElement('button')
 
     timer.classList.add('timer')
@@ -43,6 +43,12 @@ function gameStart() {
         cardBack.setAttribute('src', './images/cardBack.jpg')
         mainBar.appendChild(cardBack)
     }
+
+    // delete
+    restartButton.addEventListener('click', () => {
+        remove(mainBar)
+        cardsRoll()    
+    })
 
     // let base = 60;
     // let clocktimer, dateObj, dh, dm, ds
