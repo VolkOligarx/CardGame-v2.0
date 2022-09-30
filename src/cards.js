@@ -1,82 +1,474 @@
 function cardsRoll() {
-const card1 = document.createElement('img')
-const card2 = document.createElement('img')
-const card3 = document.createElement('img')
-const card4 = document.createElement('img')
-const card5 = document.createElement('img')
-const card6 = document.createElement('img')
-const card7 = document.createElement('img')
-const card8 = document.createElement('img')
-const card9 = document.createElement('img')
-const card10 = document.createElement('img')
-const card11 = document.createElement('img')
-const card12 = document.createElement('img')
-const card13 = document.createElement('img')
-const card14 = document.createElement('img')
-const card15 = document.createElement('img')
-const card16 = document.createElement('img')
-const card17 = document.createElement('img')
-const card18 = document.createElement('img')
-const card19 = document.createElement('img')
-const card20 = document.createElement('img')
-const card21 = document.createElement('img')
-const card22 = document.createElement('img')
-const card23 = document.createElement('img')
-const card24 = document.createElement('img')
-const card25 = document.createElement('img')
-const card26 = document.createElement('img')
-const card27 = document.createElement('img')
-const card28 = document.createElement('img')
-const card29 = document.createElement('img')
-const card30 = document.createElement('img')
-const card31 = document.createElement('img')
-const card32 = document.createElement('img')
-const card33 = document.createElement('img')
-const card34 = document.createElement('img')
-const card35 = document.createElement('img')
-const card36 = document.createElement('img')
-
-card1.setAttribute('src','./cards/6byb.jpg')
-card2.setAttribute('src','./cards/6cher.jpg')
-card3.setAttribute('src','./cards/6pic.jpg')
-card4.setAttribute('src','./cards/6kre.jpg')
-card5.setAttribute('src','./cards/7byb.jpg')
-card6.setAttribute('src','./cards/7cher.jpg')
-card7.setAttribute('src','./cards/7pic.jpg')
-card8.setAttribute('src','./cards/7kre.jpg')
-card9.setAttribute('src','./cards/8byb.jpg')
-card10.setAttribute('src','./cards/8cher.jpg')
-card11.setAttribute('src','./cards/8kre.jpg')
-card12.setAttribute('src','./cards/8pic.jpg')
-card13.setAttribute('src','./cards/9pic.jpg')
-card14.setAttribute('src','./cards/9kre.jpg')
-card15.setAttribute('src','./cards/9byb.jpg')
-card16.setAttribute('src','./cards/9cher.jpg')
-card17.setAttribute('src','./cards/10pic.jpg')
-card18.setAttribute('src','./cards/10kre.jpg')
-card19.setAttribute('src','./cards/10byb.jpg')
-card20.setAttribute('src','./cards/10cher.jpg')
-card21.setAttribute('src','./cards/Jpic.jpg')
-card22.setAttribute('src','./cards/Jkre.jpg')
-card23.setAttribute('src','./cards/Jbyb.jpg')
-card24.setAttribute('src','./cards/Jcher.jpg')
-card25.setAttribute('src','./cards/Dpic.jpg')
-card26.setAttribute('src','./cards/Dkre.jpg')
-card27.setAttribute('src','./cards/Dbyb.jpg')
-card28.setAttribute('src','./cards/Dcher.jpg')
-card29.setAttribute('src','./cards/Kpic.jpg')
-card30.setAttribute('src','./cards/Kkre.jpg')
-card31.setAttribute('src','./cards/Kbyb.jpg')
-card32.setAttribute('src','./cards/Kcher.jpg')
-card33.setAttribute('src','./cards/Tpic.jpg')
-card34.setAttribute('src','./cards/Tkre.jpg')
-card35.setAttribute('src','./cards/Tbyb.jpg')
-card36.setAttribute('src','./cards/Tcher.jpg')
+let card1 = './cards/6byb.jpg'
+let card2 = './cards/6cher.jpg'
+let card3 = './cards/6pic.jpg'
+let card4 = './cards/6kre.jpg'
+let card5 = './cards/7byb.jpg'
+let card6 = './cards/7cher.jpg'
+let card7 = './cards/7pic.jpg'
+let card8 = './cards/7kre.jpg'
+let card9 = './cards/8byb.jpg'
+let card10 = './cards/8cher.jpg'
+let card11 = './cards/8kre.jpg'
+let card12 = './cards/8pic.jpg'
+let card13 = './cards/9pic.jpg'
+let card14 = './cards/9kre.jpg'
+let card15 = './cards/9byb.jpg'
+let card16 = './cards/9cher.jpg'
+let card17 = './cards/10pic.jpg'
+let card18 = './cards/10kre.jpg'
+let card19 = './cards/10byb.jpg'
+let card20 = './cards/10cher.jpg'
+let card21 = './cards/Jpic.jpg'
+let card22 = './cards/Jkre.jpg'
+let card23 = './cards/Jbyb.jpg'
+let card24 = './cards/Jcher.jpg'
+let card25 = './cards/Dpic.jpg'
+let card26 = './cards/Dkre.jpg'
+let card27 = './cards/Dbyb.jpg'
+let card28 = './cards/Dcher.jpg'
+let card29 = './cards/Kpic.jpg'
+let card30 = './cards/Kkre.jpg'
+let card31 = './cards/Kbyb.jpg'
+let card32 = './cards/Kcher.jpg'
+let card33 = './cards/Tpic.jpg'
+let card34 = './cards/Tkre.jpg'
+let card35 = './cards/Tbyb.jpg'
+let card36 = './cards/Tcher.jpg'
 
 let cardShacker = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22, card23, card24, card25, card26, card27, card28, card29, card30, card31, card32, card33, card34, card35, card36]
 
-cardShacker.forEach(element => {
-    mainBar.appendChild(element)
-    element.classList.add('cardBack')
+let randomizer
+let randomControl = []
+let expander = -1
+let clicker = 0
+let winClicker = 0
+let cardData
+
+function check() {
+    randomControl.forEach(element => {
+        if (element === randomizer) {
+            randomizer = Math.round(Math.random()*36)
+            check()
+        }
+    });
+}
+
+if (window.gameState.hardness === 1) {
+    let pusher = []
+    for (let i = 0; i < 6; i++) {
+        randomizer = Math.round(Math.random()*35)
+        check()
+        randomControl.push(randomizer)
+        pusher.push(cardShacker[randomizer])
+        pusher.push(cardShacker[randomizer])
+    }
+    
+    pusher.sort(()=>Math.random()-0.5)
+    for (let i = 0; i < pusher.length; i++) {
+            let wrap = document.createElement('div')
+            let front = document.createElement('div')
+            let back = document.createElement('div')
+            let cardBack = document.createElement('div')
+    
+            wrap.classList.add('wrap')
+            front.classList.add('front')
+            back.classList.add('back')
+    
+            back.style.backgroundImage = `url(${pusher[i]})`
+            mainBar.appendChild(wrap)
+            cardBack.appendChild(front)
+            cardBack.appendChild(back)
+            wrap.appendChild(cardBack)
+            cardBack.classList.add('cardBack')
+    }
+    randomControl = []
+    randomizer = 0
+    mainBar.classList.add('mainBar1')
+    mainBar.style.width = '66%'
+    mainBar.style.marginLeft = '17%'
+    mainBar.style.marginRight = '17%'
+    
+    setTimeout(() => {
+    const showUpInterval = setInterval(() => {
+        expander += 1
+        mainBar.childNodes[expander].firstChild.firstChild.style.animation = 'flip-vertical-left 2s both'
+        mainBar.childNodes[expander].firstChild.lastChild.style.animation = 'flip-vertical-left-back 2s both'
+        if (expander === 11) {
+            clearInterval(showUpInterval)
+        }
+    }, 200);
+}, 1000);
+
+    setTimeout(() => {
+        expander = 12
+    const hideInterval = setInterval(() => {
+        expander = expander - 1
+        mainBar.childNodes[expander].firstChild.firstChild.style.animation = 'flip-vertical-left-back 2s both'
+        mainBar.childNodes[expander].firstChild.lastChild.style.animation = 'flip-vertical-left 2s both'
+        if (expander === 0) {
+            clearInterval(hideInterval)
+        }
+    }, 200);
+}, 7500);
+
+setTimeout(() => {   
+let clickAnimation = document.querySelectorAll('.cardBack')
+clickAnimation.forEach(element => {
+    element.addEventListener('click', () => {
+        element.firstChild.style.animation = 'flip-vertical-left 2s both'
+        element.lastChild.style.animation = 'flip-vertical-left-back 2s both'
+        clicker += 1
+        winClicker += 1
+        element.classList.add('chosen')
+        if (winClicker === 12) {
+            
+        }
+        else if (cardData === element.lastChild.style.backgroundImage) {
+            clicker = 0
+            console.log('true');
+            const comrade = document.querySelector('.comrade')
+            comrade.style.color = '#a2ff03'
+            comrade.style.opacity = '1'
+
+            let randomAnimation0 = 'rotate-scale-up 2.9s both'
+            let randomAnimation1 = 'rotate-scale-up-diag-1 2.9s both'
+            let randomAnimation2 = 'shake-horizontal 2.9s both'
+            let randomAnimation3 ='bounce-top 2.9s both'
+
+            let randomAnimation = [randomAnimation0, randomAnimation1, randomAnimation2, randomAnimation3]
+
+            let randomText0 = 'В точку!'
+            let randomText1 = 'Вот это да!'
+            let randomText2 = 'Именно!'
+            let randomText3 = 'Ооо да...'
+            let randomText4 = 'Та самая карта!'
+            let randomText5 = 'Отличная память!'
+            let randomText6 = 'Не сбавляй темп!'
+            let randomText7 = 'Продолжай в том же духе!'
+            let randomText8 = 'Идешь на рекорд!'
+            let randomText9 = 'Еще немного...'
+
+            let randomText = [randomText0,randomText1,randomText2,randomText3,randomText4,randomText5,randomText6,randomText7,randomText8,randomText9]
+
+            comrade.style.animation = randomAnimation[Math.round(Math.random()*4)]
+            comrade.textContent = randomText[Math.round(Math.random()*10)]
+
+            let vanish = document.querySelectorAll('.chosen')
+            vanish.forEach(card => {
+                setTimeout(() => {
+                card.style.animation = 'true 2s both'
+                setTimeout(() => {
+                    card.classList.add('ashes')
+                    comrade.animation = ''
+                    comrade.style.opacity = '0'
+                }, 2000);
+            }, 1000);
+            });
+        }
+        else if (clicker === 2) {
+            clicker = 0
+            console.log('false');
+            const comrade = document.querySelector('.comrade')
+            comrade.textContent = 'Упс...'
+            comrade.style.color = '#f75555'
+            comrade.style.animation = 'false 2.9s'
+            let vanish = document.querySelectorAll('.chosen')
+            vanish.forEach(card => {
+                setTimeout(() => {
+                card.style.animation = 'false 2s both'
+                setTimeout(() => {
+                    card.classList.add('ashes')
+                    comrade.style.animation = ''
+                    comrade.style.color =''
+                    remove(mainBar)
+                    cardsRoll()
+                }, 2000);
+            }, 1000);
+            });
+        }
+        cardData = element.lastChild.style.backgroundImage
+        console.log(element.lastChild.style.backgroundImage);
+    })
 });
+}, 11000);
+}
+
+if (window.gameState.hardness === 2) {
+    let pusher = []
+    for (let i = 0; i < 12; i++) {
+        randomizer = Math.round(Math.random()*35)
+        check()
+        randomControl.push(randomizer)
+        pusher.push(cardShacker[randomizer])
+        pusher.push(cardShacker[randomizer])
+    }
+    
+    pusher.sort(()=>Math.random()-0.5)
+    for (let i = 0; i < pusher.length; i++) {
+            let wrap = document.createElement('div')
+            let front = document.createElement('div')
+            let back = document.createElement('div')
+            let cardBack = document.createElement('div')
+    
+            wrap.classList.add('wrap')
+            front.classList.add('front')
+            back.classList.add('back')
+    
+            back.style.backgroundImage = `url(${pusher[i]})`
+            mainBar.appendChild(wrap)
+            cardBack.appendChild(front)
+            cardBack.appendChild(back)
+            wrap.appendChild(cardBack)
+            cardBack.classList.add('cardBack')
+    }
+    randomControl = []
+    randomizer = 0
+    mainBar.classList.add('mainBar1')
+    mainBar.style.width = '66%'
+    mainBar.style.marginLeft = '17%'
+    mainBar.style.marginRight = '17%'
+    
+    setTimeout(() => {
+    const showUpInterval = setInterval(() => {
+        expander += 1
+        mainBar.childNodes[expander].firstChild.firstChild.style.animation = 'flip-vertical-left 2s both'
+        mainBar.childNodes[expander].firstChild.lastChild.style.animation = 'flip-vertical-left-back 2s both'
+        if (expander === 23) {
+            clearInterval(showUpInterval)
+        }
+    }, 200);
+}, 1000);
+
+    setTimeout(() => {
+        expander = 24
+    const hideInterval = setInterval(() => {
+        expander = expander - 1
+        mainBar.childNodes[expander].firstChild.firstChild.style.animation = 'flip-vertical-left-back 2s both'
+        mainBar.childNodes[expander].firstChild.lastChild.style.animation = 'flip-vertical-left 2s both'
+        if (expander === 0) {
+            clearInterval(hideInterval)
+        }
+    }, 200);
+}, 15000);
+
+setTimeout(() => {   
+let clickAnimation = document.querySelectorAll('.cardBack')
+clickAnimation.forEach(element => {
+    element.addEventListener('click', () => {
+        element.firstChild.style.animation = 'flip-vertical-left 2s both'
+        element.lastChild.style.animation = 'flip-vertical-left-back 2s both'
+        clicker += 1
+        winClicker += 1
+        element.classList.add('chosen')
+        if (winClicker === 24) {
+            
+        }
+        else if (cardData === element.lastChild.style.backgroundImage) {
+            clicker = 0
+            console.log('true');
+            const comrade = document.querySelector('.comrade')
+            comrade.style.color = '#a2ff03'
+            comrade.style.opacity = '1'
+
+            let randomAnimation0 = 'rotate-scale-up 2.9s both'
+            let randomAnimation1 = 'rotate-scale-up-diag-1 2.9s both'
+            let randomAnimation2 = 'shake-horizontal 2.9s both'
+            let randomAnimation3 ='bounce-top 2.9s both'
+
+            let randomAnimation = [randomAnimation0, randomAnimation1, randomAnimation2, randomAnimation3]
+
+            let randomText0 = 'В точку!'
+            let randomText1 = 'Вот это да!'
+            let randomText2 = 'Именно!'
+            let randomText3 = 'Ооо да...'
+            let randomText4 = 'Та самая карта!'
+            let randomText5 = 'Отличная память!'
+            let randomText6 = 'Не сбавляй темп!'
+            let randomText7 = 'Продолжай в том же духе!'
+            let randomText8 = 'Идешь на рекорд!'
+            let randomText9 = 'Еще немного...'
+
+            let randomText = [randomText0,randomText1,randomText2,randomText3,randomText4,randomText5,randomText6,randomText7,randomText8,randomText9]
+
+            comrade.style.animation = randomAnimation[Math.round(Math.random()*4)]
+            comrade.textContent = randomText[Math.round(Math.random()*10)]
+
+            let vanish = document.querySelectorAll('.chosen')
+            vanish.forEach(card => {
+                setTimeout(() => {
+                card.style.animation = 'true 2s both'
+                setTimeout(() => {
+                    card.classList.add('ashes')
+                    comrade.animation = ''
+                    comrade.style.opacity = '0'
+                }, 2000);
+            }, 1000);
+            });
+        }
+        else if (clicker === 2) {
+            clicker = 0
+            console.log('false');
+            const comrade = document.querySelector('.comrade')
+            comrade.textContent = 'Упс...'
+            comrade.style.color = '#f75555'
+            comrade.style.animation = 'false 2.9s'
+            let vanish = document.querySelectorAll('.chosen')
+            vanish.forEach(card => {
+                setTimeout(() => {
+                card.style.animation = 'false 2s both'
+                setTimeout(() => {
+                    card.classList.add('ashes')
+                    comrade.style.animation = ''
+                    comrade.style.color =''
+                    remove(mainBar)
+                    cardsRoll()
+                }, 2000);
+            }, 1000);
+            });
+        }
+        cardData = element.lastChild.style.backgroundImage
+        console.log(element.lastChild.style.backgroundImage);
+    })
+});
+}, 16000);
+}
+
+if (window.gameState.hardness === 3) {
+    let pusher = []
+    for (let i = 0; i < 18; i++) {
+        randomizer = Math.round(Math.random()*35)
+        check()
+        randomControl.push(randomizer)
+        pusher.push(cardShacker[randomizer])
+        pusher.push(cardShacker[randomizer])
+    }
+    
+    pusher.sort(()=>Math.random()-0.5)
+    for (let i = 0; i < pusher.length; i++) {
+            let wrap = document.createElement('div')
+            let front = document.createElement('div')
+            let back = document.createElement('div')
+            let cardBack = document.createElement('div')
+    
+            wrap.classList.add('wrap')
+            front.classList.add('front')
+            back.classList.add('back')
+    
+            back.style.backgroundImage = `url(${pusher[i]})`
+            mainBar.appendChild(wrap)
+            cardBack.appendChild(front)
+            cardBack.appendChild(back)
+            wrap.appendChild(cardBack)
+            cardBack.classList.add('cardBack')
+    }
+    randomControl = []
+    randomizer = 0
+    mainBar.classList.add('mainBar3')
+    mainBar.style.width = '100%'
+    
+    setTimeout(() => {
+    const showUpInterval = setInterval(() => {
+        expander += 1
+        mainBar.childNodes[expander].firstChild.firstChild.style.animation = 'flip-vertical-left 2s both'
+        mainBar.childNodes[expander].firstChild.lastChild.style.animation = 'flip-vertical-left-back 2s both'
+        if (expander === 35) {
+            clearInterval(showUpInterval)
+        }
+    }, 200);
+}, 1000);
+
+    setTimeout(() => {
+        expander = 36
+    const hideInterval = setInterval(() => {
+        expander = expander - 1
+        mainBar.childNodes[expander].firstChild.firstChild.style.animation = 'flip-vertical-left-back 2s both'
+        mainBar.childNodes[expander].firstChild.lastChild.style.animation = 'flip-vertical-left 2s both'
+        if (expander === 0) {
+            clearInterval(hideInterval)
+        }
+    }, 200);
+}, 30000);
+
+setTimeout(() => {   
+let clickAnimation = document.querySelectorAll('.cardBack')
+clickAnimation.forEach(element => {
+    element.addEventListener('click', () => {
+        element.firstChild.style.animation = 'flip-vertical-left 2s both'
+        element.lastChild.style.animation = 'flip-vertical-left-back 2s both'
+        clicker += 1
+        winClicker += 1
+        element.classList.add('chosen')
+        if (winClicker === 36) {
+            
+        }
+        else if (cardData === element.lastChild.style.backgroundImage) {
+            clicker = 0
+            console.log('true');
+            const comrade = document.querySelector('.comrade')
+            comrade.style.color = '#a2ff03'
+            comrade.style.opacity = '1'
+
+            let randomAnimation0 = 'rotate-scale-up 2.9s both'
+            let randomAnimation1 = 'rotate-scale-up-diag-1 2.9s both'
+            let randomAnimation2 = 'shake-horizontal 2.9s both'
+            let randomAnimation3 ='bounce-top 2.9s both'
+
+            let randomAnimation = [randomAnimation0, randomAnimation1, randomAnimation2, randomAnimation3]
+
+            let randomText0 = 'В точку!'
+            let randomText1 = 'Вот это да!'
+            let randomText2 = 'Именно!'
+            let randomText3 = 'Ооо да...'
+            let randomText4 = 'Та самая карта!'
+            let randomText5 = 'Отличная память!'
+            let randomText6 = 'Не сбавляй темп!'
+            let randomText7 = 'Продолжай в том же духе!'
+            let randomText8 = 'Идешь на рекорд!'
+            let randomText9 = 'Еще немного...'
+
+            let randomText = [randomText0,randomText1,randomText2,randomText3,randomText4,randomText5,randomText6,randomText7,randomText8,randomText9]
+
+            comrade.style.animation = randomAnimation[Math.round(Math.random()*4)]
+            comrade.textContent = randomText[Math.round(Math.random()*10)]
+
+            let vanish = document.querySelectorAll('.chosen')
+            vanish.forEach(card => {
+                setTimeout(() => {
+                card.style.animation = 'true 2s both'
+                setTimeout(() => {
+                    card.classList.add('ashes')
+                    comrade.animation = ''
+                    comrade.style.opacity = '0'
+                }, 2000);
+            }, 1000);
+            });
+        }
+        else if (clicker === 2) {
+            clicker = 0
+            console.log('false');
+            const comrade = document.querySelector('.comrade')
+            comrade.textContent = 'Упс...'
+            comrade.style.color = '#f75555'
+            comrade.style.animation = 'false 2.9s'
+            let vanish = document.querySelectorAll('.chosen')
+            vanish.forEach(card => {
+                setTimeout(() => {
+                card.style.animation = 'false 2s both'
+                setTimeout(() => {
+                    card.classList.add('ashes')
+                    comrade.style.animation = ''
+                    comrade.style.color =''
+                    remove(mainBar)
+                    cardsRoll()
+                }, 2000);
+            }, 1000);
+            });
+        }
+        cardData = element.lastChild.style.backgroundImage
+        console.log(element.lastChild.style.backgroundImage);
+    })
+});
+}, 31000);
+}
 }

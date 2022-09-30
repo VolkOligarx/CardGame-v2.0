@@ -1,7 +1,7 @@
 function gameStart() {
     main.classList.remove('mainHardnessPick')
     remove(main)
-    const upperBar = document.createElement('div')
+    upperBar = document.createElement('div')
     const timer = document.createElement('input')
     const min = document.createElement('p')
     const sec = document.createElement('p')
@@ -9,6 +9,7 @@ function gameStart() {
     const timerBar = document.createElement('div')
     mainBar = document.createElement('div')
     const restartButton = document.createElement('button')
+    const comrade = document.createElement('div')
 
     timer.classList.add('timer')
     timerBar.classList.add('timerBar')
@@ -18,6 +19,7 @@ function gameStart() {
     min.classList.add('upperBarText')
     sec.classList.add('upperBarText')
     restartButton.classList.add('restartButton')
+    comrade.classList.add('comrade')
 
     sec.textContent = 'sek'
     min.textContent = 'min'
@@ -33,16 +35,12 @@ function gameStart() {
     minSecBar.appendChild(min)
     minSecBar.appendChild(sec)
     upperBar.appendChild(timerBar)
+    upperBar.appendChild(comrade)
     upperBar.appendChild(restartButton)
     main.appendChild(upperBar)
     main.appendChild(mainBar)
 
-    for (let i = 0; i < 36; i++) {
-        const cardBack = document.createElement('img')
-        cardBack.classList.add('cardBack')
-        cardBack.setAttribute('src', './images/cardBack.jpg')
-        mainBar.appendChild(cardBack)
-    }
+    cardsRoll()
 
     // delete
     restartButton.addEventListener('click', () => {
