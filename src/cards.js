@@ -122,7 +122,9 @@ clickAnimation.forEach(element => {
         winClicker += 1
         element.classList.add('chosen')
         if (winClicker === 12) {
-            
+            remove(main)
+            finalScreen()
+            win()
         }
         else if (cardData === element.lastChild.style.backgroundImage) {
             clicker = 0
@@ -182,7 +184,8 @@ clickAnimation.forEach(element => {
                     comrade.style.animation = ''
                     comrade.style.color =''
                     remove(mainBar)
-                    cardsRoll()
+                    finalScreen()
+                    lose()
                 }, 2000);
             }, 1000);
             });
@@ -262,7 +265,9 @@ clickAnimation.forEach(element => {
         winClicker += 1
         element.classList.add('chosen')
         if (winClicker === 24) {
-            
+            remove(main)
+            finalScreen()
+            win()
         }
         else if (cardData === element.lastChild.style.backgroundImage) {
             clicker = 0
@@ -322,7 +327,8 @@ clickAnimation.forEach(element => {
                     comrade.style.animation = ''
                     comrade.style.color =''
                     remove(mainBar)
-                    cardsRoll()
+                    finalScreen()
+                    lose()
                 }, 2000);
             }, 1000);
             });
@@ -400,7 +406,9 @@ clickAnimation.forEach(element => {
         winClicker += 1
         element.classList.add('chosen')
         if (winClicker === 36) {
-            
+            remove(main)
+            finalScreen()
+            win()
         }
         else if (cardData === element.lastChild.style.backgroundImage) {
             clicker = 0
@@ -460,7 +468,8 @@ clickAnimation.forEach(element => {
                     comrade.style.animation = ''
                     comrade.style.color =''
                     remove(mainBar)
-                    cardsRoll()
+                    finalScreen()
+                    lose()
                 }, 2000);
             }, 1000);
             });

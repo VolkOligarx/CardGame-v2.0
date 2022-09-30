@@ -15,26 +15,6 @@
         <script src="./src/gameStart.js"></script>
         <script src="./src/cards.js"></script>
         <script src="./src/finalScreen.js"></script>
-        <script>
-            let changer = 40
-            let mainBar
-            let upperBar
-            let cardCopy
-
-            const body = document.querySelector('body')
-            const main = document.querySelector('.main')
-
-            function remove(block) {
-                while (block.firstChild) {
-                    block.removeChild(block.firstChild)
-                }
-            }
-            window.gameState = {
-                hardness: 0
-            }
-            window.onload = () => {
-            hardnessPick()
-            }
-        </script>
+        <script src="./src/index.js"></script>
     </body>
 </html>

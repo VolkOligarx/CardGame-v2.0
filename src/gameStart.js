@@ -2,7 +2,7 @@ function gameStart() {
     main.classList.remove('mainHardnessPick')
     remove(main)
     upperBar = document.createElement('div')
-    const timer = document.createElement('input')
+    timer = document.createElement('input')
     const min = document.createElement('p')
     const sec = document.createElement('p')
     const minSecBar = document.createElement('div')
@@ -42,10 +42,9 @@ function gameStart() {
 
     cardsRoll()
 
-    // delete
     restartButton.addEventListener('click', () => {
         remove(mainBar)
-        cardsRoll()    
+        hardnessPick() 
     })
 
     // let base = 60;
