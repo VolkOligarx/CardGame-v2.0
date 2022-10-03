@@ -1,4 +1,5 @@
 import { hardnessPick } from "./hardnessPick.js";
+import { timerFunct } from "./gameStart.js";
 
 export function finalScreen() {
     littleBlueScreen = document.createElement('div')
@@ -30,6 +31,7 @@ export function lose() {
     loseText.textContent = 'Вы проиграли!'
     spentTime.textContent = 'Затраченное время:'
     yourTime.textContent = timer.value
+    clearInterval(timerEngine)
     finalRestartButton.textContent = 'Играть снова'
 
     finalRestartButton.addEventListener('click', () => {
@@ -70,6 +72,7 @@ export function win() {
     winText.textContent = 'Вы выиграли!'
     spentTime.textContent = 'Затраченное время:'
     yourTime.textContent = timer.value
+    clearInterval(timerEngine)
     finalRestartButton.textContent = 'Играть снова'
 
     finalRestartButton.addEventListener('click', () => {

@@ -1,6 +1,8 @@
 import { gameStart } from "./gameStart.js";
+import { timerFunct } from "./gameStart.js";
 export function hardnessPick() {
     remove(main)
+    clearInterval(timerEngine)
     const numbers = document.createElement('div')
     const pick = document.createElement('p')
     const first = document.createElement('div')
