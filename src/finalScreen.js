@@ -1,4 +1,6 @@
-function finalScreen() {
+import { hardnessPick } from "./hardnessPick.js";
+
+export function finalScreen() {
     littleBlueScreen = document.createElement('div')
 
     main.classList.add('mainOpacity')
@@ -7,7 +9,7 @@ function finalScreen() {
     body.appendChild(littleBlueScreen)
 }
 
-function lose() {
+export function lose() {
     const loseImg = document.createElement('img')
     const loseText = document.createElement('div')
     const spentTime = document.createElement('div')
@@ -47,7 +49,7 @@ function lose() {
     littleBlueScreen.appendChild(finalRestartButton)
 }
 
-function win() {
+export function win() {
     const winImg = document.createElement('img')
     const winText = document.createElement('div')
     const spentTime = document.createElement('div')

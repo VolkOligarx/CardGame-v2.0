@@ -1,4 +1,10 @@
-function cardsRoll() {
+import { hardnessPick } from "./hardnessPick.js";
+import { finalScreen } from "./finalScreen.js";
+import { win } from "./finalScreen.js";
+import { lose } from "./finalScreen.js";
+
+
+export function cardsRoll() {
 let card1 = './cards/6byb.jpg'
 let card2 = './cards/6cher.jpg'
 let card3 = './cards/6pic.jpg'

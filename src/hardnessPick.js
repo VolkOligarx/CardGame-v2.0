@@ -1,4 +1,5 @@
-function hardnessPick() {
+import { gameStart } from "./gameStart.js";
+export function hardnessPick() {
     remove(main)
     const numbers = document.createElement('div')
     const pick = document.createElement('p')
@@ -59,3 +60,4 @@ function hardnessPick() {
     numbers.appendChild(second)
     numbers.appendChild(third)
 }
+

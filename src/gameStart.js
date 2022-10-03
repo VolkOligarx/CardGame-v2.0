@@ -1,4 +1,8 @@
-function gameStart() {
+import { hardnessPick } from "./hardnessPick.js";
+import { cardsRoll } from "./cards.js";
+
+
+export function gameStart() {
     main.classList.remove('mainHardnessPick')
     remove(main)
     upperBar = document.createElement('div')
