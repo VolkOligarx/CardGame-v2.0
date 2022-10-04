@@ -5,7 +5,7 @@
   "main": "gameStart.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "format": "prettier --write .",
     "lint:js": "eslint ./src/**/*.js",
     "lint:css": "stylelint './src/**/*.css'",

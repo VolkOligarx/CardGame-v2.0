@@ -1,6 +1,6 @@
-import { gameStart } from "./gameStart.ts";
-import { timerFunct } from "./gameStart.ts";
-export function hardnessPick(obj: any) {
+import { gameStart } from "./gameStart.js";
+import { timerFunct } from "./gameStart.js";
+export function hardnessPick() {
     remove(main)
     clearInterval(timerEngine)
     const numbers = document.createElement('div')

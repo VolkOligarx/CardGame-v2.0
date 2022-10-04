@@ -1,4 +1,4 @@
-import { hardnessPick } from "./hardnessPick.ts";
+import { hardnessPick } from "./hardnessPick.js";
 
 window.onload = () => {
 hardnessPick()

@@ -1,7 +1,8 @@
-import { hardnessPick } from './hardnessPick.ts'
-import { cardsRoll } from './cards.ts'
+import { hardnessPick } from "./hardnessPick.js";
+import { cardsRoll } from "./cards.js";
 
-export function gameStart(obj: any) {
+
+export function gameStart() {
     main.classList.remove('mainHardnessPick')
     remove(main)
     clearInterval(timerEngine)
@@ -48,17 +49,17 @@ export function gameStart(obj: any) {
 
     restartButton.addEventListener('click', () => {
         remove(mainBar)
-        hardnessPick()
+        hardnessPick() 
     })
 }
 
-export function timerFunct(obj: any) {
+export function timerFunct() {
     timerEngine = setInterval(() => {
-        if (clocker >= 0.6) {
+        if (clocker >= 0.60) {
             clocker = 0.01
             minClocker += 1
         }
         timer.value = '0' + minClocker + clocker.toFixed(2).substring(1)
         clocker += 0.01
-    }, 1000)
+    }, 1000);
 }
