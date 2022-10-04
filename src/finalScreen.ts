@@ -1,7 +1,7 @@
-import { hardnessPick } from "./hardnessPick.js";
-import { timerFunct } from "./gameStart.js";
+import { hardnessPick } from "./hardnessPick.ts";
+import { timerFunct } from "./gameStart.ts";
 
-export function finalScreen() {
+export function finalScreen(obj: any) {
     littleBlueScreen = document.createElement('div')
 
     main.classList.add('mainOpacity')
@@ -10,7 +10,7 @@ export function finalScreen() {
     body.appendChild(littleBlueScreen)
 }
 
-export function lose() {
+export function lose(obj: any) {
     const loseImg = document.createElement('img')
     const loseText = document.createElement('div')
     const spentTime = document.createElement('div')
@@ -51,7 +51,7 @@ export function lose() {
     littleBlueScreen.appendChild(finalRestartButton)
 }
 
-export function win() {
+export function win(obj: any) {
     const winImg = document.createElement('img')
     const winText = document.createElement('div')
     const spentTime = document.createElement('div')

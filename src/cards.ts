@@ -1,11 +1,11 @@
-import { hardnessPick } from "./hardnessPick.js";
-import { finalScreen } from "./finalScreen.js";
-import { win } from "./finalScreen.js";
-import { lose } from "./finalScreen.js";
-import { timerFunct } from "./gameStart.js";
+import { hardnessPick } from "./hardnessPick.ts";
+import { finalScreen } from "./finalScreen.ts";
+import { win } from "./finalScreen.ts";
+import { lose } from "./finalScreen.ts";
+import { timerFunct } from "./gameStart.ts";
 
 
-export function cardsRoll() {
+export function cardsRoll(obj: any) {
     timer.value = '00.00'
 let card1 = './cards/6byb.jpg'
 let card2 = './cards/6cher.jpg'
@@ -46,12 +46,12 @@ let card36 = './cards/Tcher.jpg'
 
 let cardShacker = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22, card23, card24, card25, card26, card27, card28, card29, card30, card31, card32, card33, card34, card35, card36]
 
-let randomizer
-let randomControl = []
+let randomizer: any
+let randomControl: any = []
 let expander = -1
 let clicker = 0
 let winClicker = 0
-let cardData
+let cardData: any
 
 function check() {
     randomControl.forEach(element => {
