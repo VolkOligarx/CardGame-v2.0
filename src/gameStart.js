@@ -1,5 +1,5 @@
 import { hardnessPick } from "./hardnessPick.js";
-import { cardsRoll } from "./cards.js";
+import { cardsRoll } from "./cards.ts";
 
 
 export function gameStart() {

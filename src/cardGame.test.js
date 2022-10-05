@@ -2,7 +2,7 @@
 // import { finalScreen } from "./finalScreen.js";
 // import { win } from "./finalScreen.js";
 // import { lose } from "./finalScreen.js";
-const { timerFunct } = require("./gameStart");
+const { timerFunct } = require("./gameStart.js");
 const { it } = require("@jest/globals");
 // import { cardsRoll } from "./cards.js";
 
