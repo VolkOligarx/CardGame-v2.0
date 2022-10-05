@@ -1,5 +1,9 @@
-import { gameStart } from "./gameStart.js";
-import { timerFunct } from "./gameStart.js";
+import { gameStart } from './gameStart.js'
+import { timerFunct } from './gameStart.js'
+
+window.onload = () => {
+    hardnessPick()
+}
 export function hardnessPick() {
     remove(main)
     clearInterval(timerEngine)
@@ -39,10 +43,10 @@ export function hardnessPick() {
         window.gameState.hardness = 2
     })
     third.addEventListener('click', () => {
-        first.classList.remove('colorChanger', 'pickAfterPick');
-        second.classList.remove('colorChanger', 'pickAfterPick');
-        third.classList.add('colorChanger');
-        third.classList.add('pickAfterPick');
+        first.classList.remove('colorChanger', 'pickAfterPick')
+        second.classList.remove('colorChanger', 'pickAfterPick')
+        third.classList.add('colorChanger')
+        third.classList.add('pickAfterPick')
         window.gameState.hardness = 3
     })
     startButton.addEventListener('click', (event) => {
@@ -62,4 +66,3 @@ export function hardnessPick() {
     numbers.appendChild(second)
     numbers.appendChild(third)
 }
-

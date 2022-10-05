@@ -4,7 +4,6 @@ import { win } from "./finalScreen.js";
 import { lose } from "./finalScreen.js";
 import { timerFunct } from "./gameStart.js";
 
-
 export function cardsRoll() {
     timer.value = '00.00'
 let card1 = './cards/6byb.jpg'
