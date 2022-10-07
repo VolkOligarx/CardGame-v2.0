@@ -1,11 +1,16 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-module.exports = {
-  entry: "./src/index.ts",
-  mode: process.env.NODE_ENV === "production" ? "production" : "development",
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default {
+  entry: "./src/index.js",
+  mode: "production" ? "production" : "development",
   module: {
     rules: [
       {
@@ -38,5 +43,8 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
-  plugins: [new MiniCssExtractPlugin(), new HtmlWebpackPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin(), 
+    new HtmlWebpackPlugin()
+  ],
 };

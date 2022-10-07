@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { gameStart } from './gameStart.js'
 import { timerFunct } from './gameStart.js'
 

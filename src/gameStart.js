@@ -1,5 +1,6 @@
+// @ts-nocheck
 import { hardnessPick } from "./hardnessPick.js";
-import { cardsRoll } from "./cards.ts";
+import { cardsRoll } from "./cards.js";
 
 
 export function gameStart() {

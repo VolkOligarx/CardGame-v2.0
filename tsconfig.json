@@ -1,14 +1,6 @@
-// {
-//   "compilerOptions": {
-//     "module": "commonjs",
-//     "sourceMap": true,
-//     "noImplicitAny": true,
-//     "strictNullChecks": true
-//   },
-// }
 {
   "compilerOptions": {
-    "strict": true, 
+    "strict": false, 
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "es6",
@@ -17,7 +9,7 @@
     "moduleResolution": "node"
   },
     "include": [
-      "env.d.ts"
+      "index.d.ts"
   ],
 
     "exclude": [
