@@ -1,17 +1,23 @@
-// // import { hardnessPick } from "./hardnessPick.js";
-// // import { finalScreen } from "./finalScreen.js";
-// // import { win } from "./finalScreen.js";
-// // import { lose } from "./finalScreen.js";
-// const { timerFunct } = require("./gameStart.js");
-// const { it } = require("@jest/globals");
-// // import { cardsRoll } from "./cards.js";
+const { it } = require("@jest/globals");
+const { TodoList, TodoItem } = require("../useless/uselessTest");
 
-// it('should start clocker', () => {
-//     const checker = new timerFunct()
+it("should add first element to list", () => {
+  const list = new TodoList();
 
-//     timerFunct()
+  list.addItem({ name: "create test" });
 
-//     if (timer.value === '00.00') {
-//         throw Error("not started")
-//     }
-// })
+  if (list.items.length === 0) {
+    throw Error("Items equal to 0");
+  }
+});
+
+it("should add second item to list", () => {
+  const item = new TodoItem({ name: "create test" });
+  const list = new TodoList([item]);
+
+  list.addItem({ name: "check me" });
+
+  if (list.items[1].name !== "check me") {
+    throw Error("Second item was not added");
+  }
+});
