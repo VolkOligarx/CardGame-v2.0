@@ -2,9 +2,7 @@
 import { gameStart } from './gameStart.js'
 import { timerFunct } from './gameStart.js'
 
-window.onload = () => {
-    hardnessPick()
-}
+
 export function hardnessPick() {
     remove(main)
     clearInterval(timerEngine)
