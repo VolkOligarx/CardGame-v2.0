@@ -1,10 +1,18 @@
 // @ts-nocheck
-import { hardnessPick } from "./hardnessPick.js";
-import { timerFunct } from "./gameStart.js";
+import { hardnessPick } from './hardnessPick.js'
+import { timerFunct } from './gameStart.js'
+
+import { body } from './index.js'
+import { main } from './index.js'
+import { changer } from './index.js'
+import { mainBar } from './index.js'
+import { upperBar } from './index.js'
+import { cardCopy } from './index.js'
+import { littleBlueScreen } from './index.js'
+import { timer } from './index.js'
+import { remove } from './index.js'
 
 export function finalScreen() {
-    littleBlueScreen = document.createElement('div')
-
     main.classList.add('mainOpacity')
     littleBlueScreen.classList.add('littleBlueScreen')
 
@@ -38,9 +46,11 @@ export function lose() {
     finalRestartButton.addEventListener('click', () => {
         main.classList.remove('mainOpacity')
         let deleteShit = document.querySelectorAll('.littleBlueScreen')
-        deleteShit.forEach((element)=>{
+        deleteShit.forEach((element) => {
             remove(element)
-            element.classList.remove('littleBlueScreen')})
+            element.classList.remove('littleBlueScreen')
+        })
+        remove(upperBar)
         remove(main)
         hardnessPick()
     })
@@ -79,9 +89,10 @@ export function win() {
     finalRestartButton.addEventListener('click', () => {
         main.classList.remove('mainOpacity')
         let deleteShit = document.querySelectorAll('.littleBlueScreen')
-        deleteShit.forEach((element)=>{
+        deleteShit.forEach((element) => {
             remove(element)
-            element.classList.remove('littleBlueScreen')})
+            element.classList.remove('littleBlueScreen')
+        })
         remove(main)
         hardnessPick()
     })

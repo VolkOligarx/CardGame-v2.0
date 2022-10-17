@@ -2,6 +2,15 @@
 import { gameStart } from './gameStart.js'
 import { timerFunct } from './gameStart.js'
 
+import { body } from './index.js'
+import { main } from './index.js'
+import { changer } from './index.js'
+import { mainBar } from './index.js'
+import { upperBar } from './index.js'
+import { cardCopy } from './index.js'
+import { littleBlueScreen } from './index.js'
+import { timer } from './index.js'
+import { remove } from './index.js'
 
 export function hardnessPick() {
     remove(main)

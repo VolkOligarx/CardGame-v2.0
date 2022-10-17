@@ -6,38 +6,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>CardGame</title>
         <link rel="stylesheet" href="./css/hardnessPick.css" />
-        <link rel="stylesheet" href="./css/gameStart.css">
-        <link rel="stylesheet" href="./css/finalScreen.css">
+        <link rel="stylesheet" href="./css/gameStart.css" />
+        <link rel="stylesheet" href="./css/finalScreen.css" />
     </head>
     <body>
         <div class="main"></div>
         <script type="module" src="./src/index.js"></script>
         <script>
-            const body = document.querySelector('body')
-            const main = document.querySelector('.main')
-
-            function remove(block) {
-                while (block.firstChild) {
-            block.removeChild(block.firstChild)
+            let timerEngine
+            let minClocker = 0
+            let clocker = 0.01
+            window.gameState = {
+                hardness: 0,
             }
-        }
-        
-        let changer = 40
-        let mainBar
-        let upperBar
-        let cardCopy
-        let littleBlueScreen
-        let timer
-        let timerEngine
-        let clocker = 0.01
-        let minClocker = 0
-
-
-        window.gameState = {
-            hardness: 0
-        }
-
-
         </script>
     </body>
 </html>

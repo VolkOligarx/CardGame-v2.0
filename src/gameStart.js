@@ -1,19 +1,25 @@
 // @ts-nocheck
-import { hardnessPick } from "./hardnessPick.js";
-import { cardsRoll } from "./cards.js";
+import { hardnessPick } from './hardnessPick.js'
+import { cardsRoll } from './cards.js'
 
+import { body } from './index.js'
+import { main } from './index.js'
+import { changer } from './index.js'
+import { mainBar } from './index.js'
+import { upperBar } from './index.js'
+import { cardCopy } from './index.js'
+import { littleBlueScreen } from './index.js'
+import { timer } from './index.js'
+import { remove } from './index.js'
 
 export function gameStart() {
     main.classList.remove('mainHardnessPick')
     remove(main)
     clearInterval(timerEngine)
-    upperBar = document.createElement('div')
-    timer = document.createElement('input')
     const min = document.createElement('p')
     const sec = document.createElement('p')
     const minSecBar = document.createElement('div')
     const timerBar = document.createElement('div')
-    mainBar = document.createElement('div')
     const restartButton = document.createElement('button')
     const comrade = document.createElement('div')
 
@@ -49,18 +55,19 @@ export function gameStart() {
     cardsRoll()
 
     restartButton.addEventListener('click', () => {
+        remove(upperBar)
         remove(mainBar)
-        hardnessPick() 
+        hardnessPick()
     })
 }
 
 export function timerFunct() {
     timerEngine = setInterval(() => {
-        if (clocker >= 0.60) {
+        if (clocker >= 0.6) {
             clocker = 0.01
             minClocker += 1
         }
         timer.value = '0' + minClocker + clocker.toFixed(2).substring(1)
         clocker += 0.01
-    }, 1000);
+    }, 1000)
 }

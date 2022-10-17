@@ -1,37 +1,37 @@
 const { randomUUID } = require('crypto')
 
 class TodoList {
-  items = [];
+    items = []
 
-  constructor(items) {
-    this.items = items || [];
-  }
+    constructor(items) {
+        this.items = items || []
+    }
 
-  addItem({id, name}) {
-    const item = new TodoItem(id, name);
-    
-    this.items.push(item);
-  }
+    addItem({ id, name }) {
+        const item = new TodoItem(id, name)
 
-  done(id) {
-    this.items.find((item) => item.id === id).done();
-  }
+        this.items.push(item)
+    }
 
-  clear() {
-    this.items = this.item.filter((item) => !item.isDone);
-  }
+    done(id) {
+        this.items.find((item) => item.id === id).done()
+    }
+
+    clear() {
+        this.items = this.item.filter((item) => !item.isDone)
+    }
 }
 
 class TodoItem {
-  constructor(id, name) {
-    this.id = id || randomUUID();
-    this.name = name;
-    this.isDone = false;
-  }
+    constructor(id, name) {
+        this.id = id || randomUUID()
+        this.name = name
+        this.isDone = false
+    }
 
-  done() {
-    this.isDone = true;
-  }
+    done() {
+        this.isDone = true
+    }
 }
 
-module.exports = { TodoList, TodoItem };
+module.exports = { TodoList, TodoItem }
