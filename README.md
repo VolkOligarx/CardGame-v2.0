@@ -1,9 +1,12 @@
-#README.md
+# CardGame site as pet-project based on JS-vanilla
 
-Those project is created as browser-game in which u can train your memory skills
+#### This project is created as browser-game in which u can train your memory skills. Cards can do flip, match and disappear. Working timer.
 
-to install npm modules - type in console 'npm install'
+### Author: VolkOligarx
 
-to run a project type in console npx http-server
+### Lng and environment: JS-vanilla
 
-then open localhost:8080 in u'r web
+### To start type in console "npm install", then "npx http-server", then open localhost:8080 in u'r web
+
+
+22.12.2022
